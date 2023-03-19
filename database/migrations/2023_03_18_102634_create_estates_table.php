@@ -13,13 +13,15 @@ return new class extends Migration
     {
         Schema::create('estates', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('title');
             $table->float('price');
             $table->text('description');
-            $table->integer('city_id');
+            $table->unsignedBigInteger('city_id');
             $table->string('image');
             $table->timestamps();
+            $table->foreign('city_id')->references('id')->on('cities');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
