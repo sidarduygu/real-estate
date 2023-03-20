@@ -31,41 +31,55 @@
                         <div class="card">
                             <div class="card-body">
                                 <h3 class="card-title">İlan Ekleme</h3>
-                                <form>
-                                    <!-- 2 column grid layout with text inputs for the first and last names -->
+                                <form action="{{route('estate.store')}}"  method="post" enctype="multipart/form-data">
+                                  @csrf
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="form6Example3">İlan Başlıgı</label>
-                                        <input type="text" name="advert_title" id="form6Example3" class="form-control" />
+                                        <input type="text" name="title" id="form6Example3" class="form-control" />
                                       </div>
                                       <div class="form-outline mb-4">
                                         <label class="form-label" for="form6Example5">Fiyat</label>
                                         <input type="text" name="price" id="form6Example5" class="form-control" />
                                       </div>
-                                      <div class="form-outline mb-4">
-                                        <label class="form-label" for="form6Example3">İlan Tarihi</label>
-                                        <input type="text" id="form6Example3" class="form-control" />
-                                      </div>
-
-                                    <!-- Text input -->
-                                    <!-- Text input -->
-                                    <div class="form-outline mb-4">
-                                      <label class="form-label" for="formExample4">İl</label>
-                                      <input type="text" name="province" id="form6Example4" class="form-control" />
+                                      <div class="form-group">
+                                        <label class="form-label">Aciklama</label>
+                                        <textarea class="form-control" name="description" rows="5" spellcheck="false"></textarea>
                                     </div>
 
-                                    <!-- Email input -->
-                                    <div class="form-outline mb-4">
-                                      <label class="form-label" for="form6Example5">İlçe</label>
-                                      <input type="text" name="district" id="form6Example5" class="form-control" />
+                                    <!-- Text input -->
+                                    <div class="form-group">
+                                      <label for="exampleFormControlSelect1">Ulke</label>
+                                      <select class="form-control" name="country_id" id="exampleFormControlSelect1">
+                                        @foreach ($countries as $country)
+                                        <option {{$country->id == "TR" ? "selected" : null}} value="{{$country->id}}">{{$country->name}}</option>
+                                        @endforeach
+                                      </select>
                                     </div>
 
-                                    <!-- Number input -->
+                                    <div class="form-group">
+                                      <label for="exampleFormControlSelect1">Il</label>
+                                      <select class="form-control" name="city_id" id="exampleFormControlSelect1">
+                                        @foreach ($cities as $city)
+                                        <option {{$city->id == 34 ? "selected" : null}}  value="{{$city->id}}">{{$city->name}}</option>
+                                        @endforeach
+                                      </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                      <label for="exampleFormControlSelect1">Ilce</label>
+                                      <select class="form-control" name="county_id" id="exampleFormControlSelect1">
+                                        @foreach ($counties as $county)
+                                        <option value="{{$county->id}}">{{$county->name}}</option>
+                                        @endforeach
+                                      </select>
+                                    </div>
+
 
                                     <div class="form-group">
                                         <label for="exampleFormControlSelect1">Durum</label>
                                         <select class="form-control" name="status" id="exampleFormControlSelect1">
-                                          <option>Aktif</option>
-                                          <option>Deaktif</option>
+                                          <option value="1">Aktif</option>
+                                          <option value="0">Deaktif</option>
                                         </select>
                                       </div>
                                       <div class="form-outline mb-4">

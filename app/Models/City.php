@@ -9,4 +9,10 @@ class City extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    //protected $with = ['counties'];
+
+    public function counties()
+    {
+        return $this->hasMany(County::class);
+    }
 }

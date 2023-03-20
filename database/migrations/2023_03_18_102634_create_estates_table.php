@@ -17,10 +17,9 @@ return new class extends Migration
             $table->string('title');
             $table->float('price');
             $table->text('description');
-            $table->unsignedBigInteger('city_id');
             $table->string('image');
+            $table->tinyinteger('status')->default(1);
             $table->timestamps();
-            $table->foreign('city_id')->references('id')->on('cities');
             $table->foreign('user_id')->references('id')->on('users');
         });
     }

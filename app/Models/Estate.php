@@ -9,4 +9,11 @@ class Estate extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    protected $with = ['address'];
+
+    public function address()
+    {
+        return $this->hasOne(EstateAdress::class);
+    }
 }

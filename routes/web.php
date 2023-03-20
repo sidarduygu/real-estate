@@ -9,12 +9,13 @@ use App\Http\Controllers\SayfaController;
 use App\Http\Controllers\CountyController;
 use App\Http\Controllers\EstateController;
 use App\Http\Controllers\CountryController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KullaniciController;
 use App\Http\Controllers\EstateImageController;
 use App\Http\Controllers\EstateTeypeController;
 use App\Http\Controllers\EstateCategoryController;
 use App\Http\Controllers\EstateCategorySelectController;
-use Symfony\Component\Routing\Exception\ResourceNotFoundException;
+
 
 
 Route::get('/',[HomeController::class, 'index']);
@@ -22,8 +23,9 @@ Route::get('/',[HomeController::class, 'index']);
 
 
 
-Route::prefix('panel')->group(function () {
-    Route::resource('ilan',IlanController::class);
+Route::prefix('dashboard')->group(function () {
+    Route::get('/',[DashboardController::class, 'index']);
+    Route::resource('ilan',EstateController::class);
     Route::resource('sayfa',SayfaController::class);
     Route::resource('blog',BlogController::class);
     Route::resource('kullanici',KullaniciController::class);

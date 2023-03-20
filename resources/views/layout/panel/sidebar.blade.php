@@ -17,7 +17,7 @@
                 <li class="nav-small-cap">
                     <h1>PERSONAL</h1>
                 </li>
-                <li> <a class="waves-effect waves-dark" href="/"><i class="icon-home "></i><span class="hide-menu">Ana
+                <li> <a class="waves-effect waves-dark" href="/dashboard"><i class="icon-home "></i><span class="hide-menu">Ana
                             Sayfa</span></a>
                 </li>
                 <li> <a class="waves-effect waves-dark" href="{{route('kullanici.index')}}"><i
