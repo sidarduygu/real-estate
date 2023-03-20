@@ -38,6 +38,9 @@
                         <li> <a class="waves-effect waves-dark" href="{{route('city.index')}}"><i
                                     class="icon-list"></i><span class="hide-menu">İller</span></a>
                         </li>
+                        <li> <a class="waves-effect waves-dark" href="{{route('county.index')}}"><i
+                                    class="icon-list"></i><span class="hide-menu">İlçeler</span></a>
+                        </li>
                     </ul>
                 </li>
 

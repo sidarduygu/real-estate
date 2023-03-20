@@ -15,7 +15,7 @@ class CountryController extends Controller
      */
     public function index()
     {
-        // $addCountries = $this->addCountries();
+       //  $addCountries = $this->addCountries();
         // $addCities = $this->addCities();
         $countrys = Country::all();
         return view('panel.ulkeler.index', ['countrys' => $countrys]);
@@ -129,7 +129,7 @@ class CountryController extends Controller
                     ]
                 );
             }
-            
+
             foreach ($city['counties'] as $county) {
                 County::create([
                     'name' => $county,

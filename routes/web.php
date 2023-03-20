@@ -6,6 +6,7 @@ use App\Http\Controllers\CityController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IlanController;
 use App\Http\Controllers\SayfaController;
+use App\Http\Controllers\CountyController;
 use App\Http\Controllers\EstateController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\KullaniciController;
@@ -33,6 +34,7 @@ Route::prefix('panel')->group(function () {
     Route::resource('estate',EstateController::class);
     Route::resource('estate-image',EstateImageController::class);
     Route::resource('estate-teype',EstateTeypeController::class);
-    
+    Route::resource('county',CountyController::class);
+
 });
 
