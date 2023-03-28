@@ -3,19 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
+use App\Models\Feature;
 use App\Models\Property;
 use App\Models\PropertyType;
 use Illuminate\Http\Request;
 use App\Models\PropertyImage;
 use App\Services\PropertyService;
+use App\Services\PropertyFeatureService;
 
 class PropertyController extends Controller
 {
     protected $propertyService;
+    protected $propertyFeatureService;
 
-    public function __construct(PropertyService $propertyService)
+    public function __construct(PropertyService $propertyService, PropertyFeatureService $propertyFeatureService)
     {
         $this->propertyService = $propertyService;
+        $this->propertyFeatureService = $propertyFeatureService;
     }
     /**
      * Display a listing of the resource.
@@ -23,7 +27,6 @@ class PropertyController extends Controller
     public function index()
     {
         $properties = $this->propertyService->getAll();
-
         return view('panel.property.index',['properties' => $properties]);
     }
 
@@ -34,9 +37,11 @@ class PropertyController extends Controller
     {
        $clients = Client::all();
        $propertyTypes = PropertyType::all();
+       $features = Feature::all();
        return view('panel.property.ekle',[
         'clients' => $clients,
-        'propertyTypes' => $propertyTypes
+        'propertyTypes' => $propertyTypes,
+        'features' => $features,
        ]);
     }
 
@@ -55,7 +60,7 @@ class PropertyController extends Controller
      */
     public function show(string $id)
     {
-       
+
     }
 
     /**

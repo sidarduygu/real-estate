@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\SayfaController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CountyController;
@@ -26,6 +27,7 @@ Route::get('/',[HomeController::class, 'index']);
 
 Route::prefix('dashboard')->group(function () {
     Route::get('/',[DashboardController::class, 'index']);
+    Route::resource('test',TestController::class);
     Route::resource('ilan',EstateController::class);
     Route::resource('sayfa',SayfaController::class);
     Route::resource('blog',BlogController::class);

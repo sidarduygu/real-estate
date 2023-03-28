@@ -71,6 +71,17 @@
                                     @endforeach
                                 </select>
                             </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Featur</label>
+                                <select class="form-control" name="feature_id" id="exampleFormControlSelect1">
+                                    @foreach ($features as $feature)
+                                    <option value="{{$feature->id}}">{{$feature->name}}</option>
+                                    @endforeach
+                                </select>
+
+                                <label for="exampleFormControlSelect1">Featur Value</label>
+                                <input type="number" name="feature_value" id="form6Example3" class="form-control" />
+                            </div>
 
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Durum</label>

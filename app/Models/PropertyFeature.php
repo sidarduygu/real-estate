@@ -12,7 +12,8 @@ class PropertyFeature extends Model
     use HasFactory;
 
     protected  $guarded = [];
-    
+    protected  $with = ['feature'];
+
     public function property()
     {
         return $this->belongsTo(Property::class);

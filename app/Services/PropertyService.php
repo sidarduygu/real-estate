@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Property;
+use App\Models\PropertyFeature;
 use App\Models\PropertyImage;
 
 
@@ -28,6 +29,8 @@ class PropertyService
     {
         $tempData = $data;
         unset($data['image']);
+        unset($data['feature_id']);
+        unset($data['feature_value']);
         $property = Property::firstOrCreate($data);
         $image = imageUpload($tempData['image'], 'property');
         PropertyImage::create([
@@ -36,6 +39,11 @@ class PropertyService
             'image_type' => 'jpg',
             'image_alt_text' => 'resim'
 
+        ]);
+        PropertyFeature::create([
+            'property_id' => $property->id,
+            'feature_id' => $tempData['feature_id'],
+            'value' => $tempData['feature_value']
         ]);
 
         return $property;

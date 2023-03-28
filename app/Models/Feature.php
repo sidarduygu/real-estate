@@ -11,7 +11,7 @@ class Feature extends Model
     use HasFactory;
 
     protected  $guarded = [];
-    protected  $with = ['propertyType'];
+    protected  $with = [];
 
     public function propertyFeatures()
     {

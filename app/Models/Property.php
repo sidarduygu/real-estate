@@ -14,7 +14,7 @@ class Property extends Model
     use HasFactory;
 
     protected  $guarded = [];
-    protected  $with = ['propertyImages', 'propertyFeatures', 'propertyType'];
+    protected  $with = ['propertyImages', 'propertyFeatures', 'propertyType', 'client'];
 
 
     public function client()

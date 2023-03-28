@@ -12,8 +12,8 @@ class Client extends Model
     use HasFactory;
 
     protected  $guarded = [];
-    protected  $with = ['clientType', 'properties'];
-    
+    protected  $with = ['clientType'];
+
     public function clientType()
     {
         return $this->belongsTo(ClientType::class);
