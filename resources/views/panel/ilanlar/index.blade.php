@@ -29,6 +29,7 @@
         <tr>
           <th scope="col">Sıra No</th>
           <th scope="col">İlan Başlıgı</th>
+          <th scope="col">Türü</th>
           <th scope="col">Resim</th>
           <th scope="col">Fiyat</th>
           <th scope="col">Aciklama</th>
@@ -42,24 +43,29 @@
       <tbody>
         @foreach ($estates as $estate)
         <tr>
+
           <th scope="row">{{$estate->id}}</th>
           <td>{{$estate->title}}</td>
+          <td>{{$estate->esta_teype_id}}</td>
           <td><img src="{{asset('/') . $estate->image}}" class="w-100" alt=""></td>
           <td>{{$estate->price}}</td>
           <td>{{$estate->description}}</td>
-          <td>{{$estate->address->country ? $estate->address->country->name : null }}</td>
-          <td>{{$estate->address->city ? $estate->address->city->name : null }}</td>
-          <td>{{$estate->address->county ? $estate->address->county->name : null }}</td>
+          <td>{{ $estate->address->country->name ?? 'Unknown' }}</td>
+          <td>{{ $estate->address->city->name ?? 'Unknown' }}</td>
+          <td>{{ $estate->address->county->name ?? 'Unknown' }}</td>
           <td>{{$estate->status}}</td>
           <td>
             <div>
               <div class="btn-group">
-                <a href="{{route('ilan.edit',1)}}" class="btn btn-warning">
-                  <i class="icon-pencil"></i> Düzenle
-                </a>
-                <button type="button" class="btn btn-danger">
+                <a href="{{route('ilan.edit',$estate->id)}}" class="btn btn-warning">
+                  <i class="icon-pencil"></i> Düzenle</a>
+                    <form action="{{route('estate.destroy', $estate->id)}}" method="post" >
+                        @csrf
+                        @method('delete')
+                <button type="submit" class="btn btn-danger">
                   <i class="icon-trash"></i> Sil
                 </button>
+            </form>
               </div>
           </td>
         </tr>

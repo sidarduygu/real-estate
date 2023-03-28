@@ -4,17 +4,18 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\IlanController;
 use App\Http\Controllers\SayfaController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CountyController;
 use App\Http\Controllers\EstateController;
 use App\Http\Controllers\CountryController;
+use App\Http\Controllers\FeatureController;
+use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KullaniciController;
-use App\Http\Controllers\EstateImageController;
-use App\Http\Controllers\EstateTeypeController;
-use App\Http\Controllers\EstateCategoryController;
-use App\Http\Controllers\EstateCategorySelectController;
+use App\Http\Controllers\ClientTypeController;
+use App\Http\Controllers\PropertyTypeController;
+use App\Http\Controllers\PropertyFeatureController;
 
 
 
@@ -31,12 +32,13 @@ Route::prefix('dashboard')->group(function () {
     Route::resource('kullanici',KullaniciController::class);
     Route::resource('city',CityController::class);
     Route::resource('country',CountryController::class);
-    Route::resource('estate-category',EstateCategoryController::class);
-    Route::resource('estate-category-select',EstateCategorySelectController::class);
-    Route::resource('estate',EstateController::class);
-    Route::resource('estate-image',EstateImageController::class);
-    Route::resource('estate-teype',EstateTeypeController::class);
     Route::resource('county',CountyController::class);
+    Route::resource('client-type',ClientTypeController::class);
+    Route::resource('client',ClientController::class);
+    Route::resource('property-type',PropertyTypeController::class);
+    Route::resource('feature',FeatureController::class);
+    Route::resource('property',PropertyController::class);
+    Route::resource('property-feature',PropertyFeatureController::class);
 
 });
 

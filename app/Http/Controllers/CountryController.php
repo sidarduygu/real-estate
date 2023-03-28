@@ -15,8 +15,9 @@ class CountryController extends Controller
      */
     public function index()
     {
-       //  $addCountries = $this->addCountries();
-        // $addCities = $this->addCities();
+        // $this->addCountries();
+         //$this->addCities();
+
         $countrys = Country::all();
         return view('panel.ulkeler.index', ['countrys' => $countrys]);
     }

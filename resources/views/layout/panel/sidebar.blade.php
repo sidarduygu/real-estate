@@ -50,11 +50,23 @@
                         <li> <a class="waves-effect waves-dark" href="{{route('ilan.index')}}"><i
                                     class="icon-speedometer"></i><span class="hide-menu">İlan Yönetimi</span></a>
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="{{route('estate-category.index')}}"><i
-                                    class="ti-layout-grid2"></i><span class="hide-menu">Emlak Kategori</span></a>
+                        <li> <a class="waves-effect waves-dark" href="{{route('client-type.index')}}"><i
+                                    class="ti-layout-grid2"></i><span class="hide-menu">Client Type</span></a>
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="{{route('estate-teype.index')}}"><i
-                                    class="ti-layout-grid2"></i><span class="hide-menu">Emlak Türleri</span></a>
+                        <li> <a class="waves-effect waves-dark" href="{{route('client.index')}}"><i
+                                    class="ti-layout-grid2"></i><span class="hide-menu">Client</span></a>
+                        </li>
+                        <li> <a class="waves-effect waves-dark" href="{{route('property-type.index')}}"><i
+                                    class="ti-layout-grid2"></i><span class="hide-menu">Property Type</span></a>
+                        </li>
+                        <li> <a class="waves-effect waves-dark" href="{{route('feature.index')}}"><i
+                                    class="ti-layout-grid2"></i><span class="hide-menu">Feature</span></a>
+                        </li>
+                        <li> <a class="waves-effect waves-dark" href="{{route('property.index')}}"><i
+                                    class="ti-layout-grid2"></i><span class="hide-menu">Property</span></a>
+                        </li>
+                        <li> <a class="waves-effect waves-dark" href="{{route('property-feature.index')}}"><i
+                                    class="ti-layout-grid2"></i><span class="hide-menu">Property Feature</span></a>
                         </li>
                     </ul>
                 </li>

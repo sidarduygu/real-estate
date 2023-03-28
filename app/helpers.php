@@ -32,7 +32,7 @@ if (!function_exists('imageUpload')) {
         $imageName = time().'.'.$file->getClientOriginalExtension();
         $file->move(public_path($path), $imageName);
         public_path($path) . $imageName;
-        return $path . $imageName;
+        return $path .'/'. $imageName;
     }
 }
 

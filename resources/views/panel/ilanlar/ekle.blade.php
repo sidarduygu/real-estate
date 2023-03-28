@@ -48,6 +48,15 @@
 
                                     <!-- Text input -->
                                     <div class="form-group">
+                                      <label for="exampleFormControlSelect1">Tur</label>
+                                      <select class="form-control" name="name" id="exampleFormControlSelect1">
+                                        @foreach ($estate_teypes as $estateTeype)
+                                        <option  value="{{$estateTeype->name}}">{{$estateTeype->name}}</option>
+                                        @endforeach
+                                      </select>
+
+                                    </div>
+                                    <div class="form-group">
                                       <label for="exampleFormControlSelect1">Ulke</label>
                                       <select class="form-control" name="country_id" id="exampleFormControlSelect1">
                                         @foreach ($countries as $country)
